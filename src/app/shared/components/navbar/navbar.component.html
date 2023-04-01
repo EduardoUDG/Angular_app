@@ -14,7 +14,7 @@
         <li *ngFor="let navItem of navItems" class="nav-item" [routerLink]="navItem.url">
           <a class="nav-link"
              routerLinkActive="fw-bold active"
-             [routerLinkActiveOptions]="{ exact: true }">{{ navItem.title }}</a>
+             [routerLinkActiveOptions]="{ exact: navItem.exact }">{{ navItem.title }}</a>
         </li>
 
       </ul>

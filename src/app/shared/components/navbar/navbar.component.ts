@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 interface NavItem {
   title:  string;
-  url:   string;
+  url:    string;
+  exact:  boolean;
 }
 
 @Component({
@@ -17,12 +18,12 @@ interface NavItem {
 export class NavbarComponent implements OnInit {
 
   navItems: NavItem[] = [
-    { title:'Home',     url: '/' },
-    { title:'Projects', url: 'projects' },
-    { title:'Forms',    url: 'forms' },
-    { title:'Charts',   url: 'charts' },
-    { title:'Products', url: 'products' },
-    { title:'Tags',     url: 'tags' },
+    { title:'Home',     url: '/', exact: true},
+    { title:'Projects', url: 'projects', exact: false},
+    { title:'Forms',    url: 'forms', exact: false},
+    { title:'Charts',   url: 'charts', exact: false},
+    { title:'Products', url: 'products', exact: false},
+    { title:'Tags',     url: 'tags', exact: false},
   ];
 
   constructor() { }
