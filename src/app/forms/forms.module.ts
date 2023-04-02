@@ -5,6 +5,7 @@ import { FormsRoutingModule } from './forms-routing.module';
 import { CreateFormComponent } from './pages/create-form/create-form.component';
 import { HomeFormComponent } from './pages/home-form/home-form.component';
 import { ShowFormComponent } from './pages/show-form/show-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ShowFormComponent } from './pages/show-form/show-form.component';
   ],
   imports: [
     CommonModule,
-    FormsRoutingModule
+    FormsRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class FormsModule { }
