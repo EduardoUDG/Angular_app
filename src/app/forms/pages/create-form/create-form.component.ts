@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,7 +7,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styles: [
   ]
 })
-export class CreateFormComponent implements OnInit {
+export class CreateFormComponent implements AfterViewInit {
+
+  @ViewChild('myReference') myReference!: ElementRef;
 
   myForm: FormGroup = this._fb.group({
     username: ['', Validators.required],
@@ -15,14 +17,15 @@ export class CreateFormComponent implements OnInit {
     status:   [false, Validators.required]
   });
 
+
   constructor( private _fb: FormBuilder ) { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+    this.myReference.nativeElement.focus();
   }
 
   submit() {
     if( this.myForm.invalid) return;
-
     console.log( this.myForm.value );
   }
 
