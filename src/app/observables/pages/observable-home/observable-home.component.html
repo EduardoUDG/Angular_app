@@ -1,0 +1,40 @@
+<div class="row">
+
+  <div class="col-4">
+    <ul class="list-group">
+
+      <li class="list-group-item"
+          routerLink="observable"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">Observables</li>
+
+      <li class="list-group-item"
+          routerLink="return-obs"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">Retorno de obs</li>
+
+      <li class="list-group-item"
+          routerLink="retry"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">Retry</li>
+
+      <li class="list-group-item"
+          routerLink="map"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">Map</li>
+
+      <li class="list-group-item"
+          routerLink="filter"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">Filter</li>
+
+    </ul>
+  </div>
+
+  <!-- Content -->
+  <div class="col-8 bg-light shadow-sm rounded">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+
