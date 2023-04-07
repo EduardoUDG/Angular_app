@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-observable',
@@ -6,11 +7,33 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class ObservableComponent implements OnInit {
+export class ObservableComponent {
 
-  constructor() { }
+  constructor() {
 
-  ngOnInit(): void {
+    // Valor a emitir
+    const obs$ = new Observable( observer => {
+
+      let i = -1;
+
+      const intervalo = setInterval( () => {
+        i++;
+        observer.next(i);
+
+        if (i === 4) {
+          clearInterval(intervalo);  // Cancelando interval
+          observer.complete();       // Terminando observer
+        }
+
+      }, 1000);
+
+    });
+
+    // Mostrando un mensaje cuando termine el OBSERVABLE
+    obs$.subscribe({
+      next    : (valor) => console.log('Subs:', valor)
+    });
+
   }
 
 }
