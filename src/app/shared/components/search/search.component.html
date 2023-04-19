@@ -1,0 +1,13 @@
+<form [formGroup]="myForm" autocomplete="off">
+
+  <div class="form-floating mb-3">
+    <input class="form-control"
+           type="text"
+           (keyup)="onKeyup()"
+           placeholder="search..."
+           formControlName="name">
+
+    <label for="floatingInput">Search</label>
+  </div>
+
+</form>
